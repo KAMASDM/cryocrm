@@ -153,10 +153,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# WhiteNoise configuration for serving static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Only include STATICFILES_DIRS if static directory exists and we're not collecting
+if (BASE_DIR / 'static').exists() and not os.environ.get('RAILWAY_ENVIRONMENT'):
+    STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# WhiteNoise configuration - simplified for Railway
+if not DEBUG:
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
