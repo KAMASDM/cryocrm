@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .content {
+            background: #fff;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 0 0 10px 10px;
+        }
+        .package-info {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #f5576c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ Package Expiring Soon</h1>
+        </div>
+        <div class="content">
+            <p>Hi {{ client_name }},</p>
+            
+            <p>We wanted to remind you that your wellness package is expiring soon!</p>
+            
+            <div class="package-info">
+                <h3>{{ package_name }}</h3>
+                <p><strong>Expiry Date:</strong> {{ expiry_date }}</p>
+                <p><strong>Sessions Remaining:</strong> {{ sessions_remaining }}</p>
+            </div>
+            
+            <p>Don't let your investment go to waste! Book your remaining sessions today to enjoy the full benefits of your package.</p>
+            
+            <center>
+                <a href="#" class="cta-button">Book Your Sessions Now</a>
+            </center>
+            
+            <p>If you have any questions or need help scheduling, please don't hesitate to contact us.</p>
+            
+            <p>Best regards,<br>
+            Wellness Center Team</p>
+        </div>
+        <div class="footer">
+            <p>© 2025 Wellness Center. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
